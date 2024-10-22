@@ -7,9 +7,21 @@ components:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 3Gi
   - name: configmap
-    openshift:
-      deployByDefault: true
-      uri: configmap.yaml
+    kubernetes:
+      inlined:
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          name: my-settings-1
+          namespace: che-kube-admin-devspaces-n3le3g
+          labels:
+            controller.devfile.io/mount-to-devworkspace: "true"
+            controller.devfile.io/watch-configmap: "true"
+          annotations:
+            controller.devfile.io/mount-as: env
+        data:
+          foo1: "bar"
+          bar1: "foo"
 
 commands:
   - id: deployk8s
