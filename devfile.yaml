@@ -11,6 +11,9 @@ components:
       uri: configmap.yaml
 
 commands:
+  - id: deploy-configmap
+    apply:
+      component: configmap
   - id: run-main-script
     exec:
       label: "Run main.sh script"
