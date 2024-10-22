@@ -7,13 +7,10 @@ components:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 3Gi
   - name: configmap
-    kubernetes:
+    openshift:
       uri: configmap.yaml
 
 commands:
-  - id: deployk8s
-    apply:
-      component: configmap
   - id: run-main-script
     exec:
       label: "Run main.sh script"
@@ -21,11 +18,6 @@ commands:
       workingDir: '${PROJECT_SOURCE}'
       commandLine: |
         ./main.sh
-  - id: deploy
-    composite:
-      commands:
-      -  deployk8s
-      - run-main-script
       group:
         kind: run
         isDefault: true
