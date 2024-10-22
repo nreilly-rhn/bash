@@ -8,6 +8,7 @@ components:
       memoryLimit: 3Gi
   - name: configmap
     openshift:
+      deployByDefault: true
       uri: configmap.yaml
 
 commands:
