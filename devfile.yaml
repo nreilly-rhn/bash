@@ -7,7 +7,7 @@ components:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 3Gi
   - name: configmap
-    kubernetes:
+    openshift:
       uri: configmap.yaml
 
 commands:
