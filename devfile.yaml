@@ -15,6 +15,10 @@ commands:
   - id: deployk8s
     apply:
       component: configmap
+  - id: deploy
+      composite:
+        commands:
+        - deployk8s
     group:
       kind: deploy
       isDefault: true
