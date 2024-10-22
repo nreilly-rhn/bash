@@ -11,9 +11,6 @@ components:
       uri: configmap.yaml
 
 commands:
-  - id: configmap
-    apply:
-      component: configmap
   - id: run-main-script
     exec:
       label: "Run main.sh script"
@@ -24,6 +21,3 @@ commands:
       group:
         kind: run
         isDefault: true
-events:
-  preStart:
-    - configmap
