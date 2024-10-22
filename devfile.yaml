@@ -12,6 +12,9 @@ components:
       uri: configmap.yaml
 
 commands:
+  - id: deployk8s
+    apply:
+      component: configmap
   - id: run-main-script
     exec:
       label: "Run main.sh script"
