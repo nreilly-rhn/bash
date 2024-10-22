@@ -1,29 +1,12 @@
 apiVersion: v1
-kind: List
-items:
-  - apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: my-settings-1
-      labels:
-        controller.devfile.io/mount-to-devworkspace: "true"
-        controller.devfile.io/watch-configmap: "true"
-      annotations:
-        controller.devfile.io/mount-as: env
-    data:
-      foo1: "bar"
-      bar1: "foo"
-  - apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: my-config-1
-      labels:
-        controller.devfile.io/mount-to-devworkspace: 'true'
-        controller.devfile.io/watch-configmap: 'true'
-      annotations:
-        controller.devfile.io/mount-as: subpath
-    data:
-      a.txt: |
-        11
-      b.txt: |
-        22
+kind: ConfigMap
+metadata:
+  name: my-settings-1
+  labels:
+    controller.devfile.io/mount-to-devworkspace: "true"
+    controller.devfile.io/watch-configmap: "true"
+  annotations:
+    controller.devfile.io/mount-as: env
+  data:
+    foo1: "bar"
+    bar1: "foo"
