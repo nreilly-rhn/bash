@@ -5,7 +5,6 @@ items:
     kind: ConfigMap
     metadata:
       name: my-settings-1
-      namespace: che-kube-admin-devspaces-n3le3g
       labels:
         controller.devfile.io/mount-to-devworkspace: "true"
         controller.devfile.io/watch-configmap: "true"
@@ -18,7 +17,6 @@ items:
     kind: ConfigMap
     metadata:
       name: my-config-1
-      namespace: che-kube-admin-devspaces-n3le3g
       labels:
         controller.devfile.io/mount-to-devworkspace: 'true'
         controller.devfile.io/watch-configmap: 'true'
