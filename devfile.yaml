@@ -6,6 +6,9 @@ components:
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 3Gi
+  - name: configmap
+    kubernetes:
+      uri: configmap.yaml
 
 commands:
   - id: run-main-script
