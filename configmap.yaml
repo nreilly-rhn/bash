@@ -1,0 +1,29 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-settings
+  namespace: che-kube-admin-devspaces-n3le3g
+  labels:
+    controller.devfile.io/mount-to-devworkspace: "true"
+    controller.devfile.io/watch-configmap: "true"
+  annotations:
+    controller.devfile.io/mount-as: env
+data:
+  foo: "bar"
+  bar: "foo"
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-config
+  namespace: che-kube-admin-devspaces-n3le3g
+  labels:
+    controller.devfile.io/mount-to-devworkspace: 'true'
+    controller.devfile.io/watch-configmap: 'true'
+  annotations:
+    controller.devfile.io/mount-as: subpath
+data:
+  a.txt: |
+    1
+  b.txt: |
+    2
