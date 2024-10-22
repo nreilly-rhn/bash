@@ -15,6 +15,9 @@ commands:
   - id: deployk8s
     apply:
       component: configmap
+    group:
+      kind: deploy
+      isDefault: true
   - id: run-main-script
     exec:
       label: "Run main.sh script"
