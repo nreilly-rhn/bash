@@ -15,13 +15,6 @@ commands:
   - id: deployk8s
     apply:
       component: configmap
-  - id: deploy
-      composite:
-        commands:
-        - deployk8s
-    group:
-      kind: deploy
-      isDefault: true
   - id: run-main-script
     exec:
       label: "Run main.sh script"
@@ -29,6 +22,11 @@ commands:
       workingDir: '${PROJECT_SOURCE}'
       commandLine: |
         ./main.sh
+  - id: deploy
+    composite:
+      commands:
+      -  deployk8s
+      - run-main-script
       group:
         kind: run
         isDefault: true
