@@ -8,20 +8,7 @@ components:
       memoryLimit: 3Gi
   - name: configmap
     kubernetes:
-      inlined:
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          name: my-settings-1
-          namespace: che-kube-admin-devspaces-n3le3g
-          labels:
-            controller.devfile.io/mount-to-devworkspace: "true"
-            controller.devfile.io/watch-configmap: "true"
-          annotations:
-            controller.devfile.io/mount-as: env
-        data:
-          foo1: "bar"
-          bar1: "foo"
+      uri: configmap.yaml
 
 commands:
   - id: deployk8s
