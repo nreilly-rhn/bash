@@ -6,14 +6,7 @@ components:
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 3Gi
-  - name: configmap
-    openshift:
-      uri: configmap.yaml
-
 commands:
-  - id: deploy-configmap
-    apply:
-      component: configmap
   - id: run-main-script
     exec:
       label: "Run main.sh script"
